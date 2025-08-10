@@ -1,0 +1,239 @@
+<p dir="ltr">&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="fa"&gt;<br>
+&lt;head&gt;<br>
+&lt;meta charset="UTF-8" /&gt;<br>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;<br>
+&lt;title&gt;محاسبه‌گر هدایت تحصیلی - نمره پایه نهم لازم&lt;/title&gt;<br>
+&lt;style&gt;<br>
+&nbsp; body {<br>
+&nbsp;&nbsp;&nbsp; font-family: "Tahoma", sans-serif;<br>
+&nbsp;&nbsp;&nbsp; direction: rtl;<br>
+&nbsp;&nbsp;&nbsp; background: #f5f7fa;<br>
+&nbsp;&nbsp;&nbsp; margin: 0; padding: 20px;<br>
+&nbsp;&nbsp;&nbsp; max-width: 700px; margin-left: auto; margin-right: auto;<br>
+&nbsp;&nbsp;&nbsp; color: #222;<br>
+&nbsp; }<br>
+&nbsp; h2 {<br>
+&nbsp;&nbsp;&nbsp; text-align: center; color: #2c3e50;<br>
+&nbsp; }<br>
+&nbsp; form {<br>
+&nbsp;&nbsp;&nbsp; background: white;<br>
+&nbsp;&nbsp;&nbsp; padding: 20px; border-radius: 10px;<br>
+&nbsp;&nbsp;&nbsp; box-shadow: 0 0 15px rgba(0,0,0,0.1);<br>
+&nbsp; }<br>
+&nbsp; fieldset {<br>
+&nbsp;&nbsp;&nbsp; border: 1px solid #ccc; margin-bottom: 20px;<br>
+&nbsp;&nbsp;&nbsp; border-radius: 8px; padding: 15px;<br>
+&nbsp;&nbsp;&nbsp; background: #f9fafc;<br>
+&nbsp; }<br>
+&nbsp; legend {<br>
+&nbsp;&nbsp;&nbsp; font-weight: bold; padding: 0 8px; color: #<a href="tel:34495">34495</a>e;<br>
+&nbsp; }<br>
+&nbsp; label {<br>
+&nbsp;&nbsp;&nbsp; display: flex; align-items: center; margin-bottom: 10px;<br>
+&nbsp;&nbsp;&nbsp; font-size: 0.95rem;<br>
+&nbsp; }<br>
+&nbsp; input[type=number] {<br>
+&nbsp;&nbsp;&nbsp; width: 60px; padding: 6px 8px; margin-left: 12px;<br>
+&nbsp;&nbsp;&nbsp; border-radius: 5px; border: 1px solid #bbb;<br>
+&nbsp;&nbsp;&nbsp; font-size: 1rem; text-align: center;<br>
+&nbsp; }<br>
+&nbsp; select {<br>
+&nbsp;&nbsp;&nbsp; margin-bottom: 15px;<br>
+&nbsp;&nbsp;&nbsp; width: 100%;<br>
+&nbsp;&nbsp;&nbsp; padding: 8px;<br>
+&nbsp;&nbsp;&nbsp; font-size: 1rem;<br>
+&nbsp;&nbsp;&nbsp; border-radius: 8px;<br>
+&nbsp;&nbsp;&nbsp; border: 1px solid #bbb;<br>
+&nbsp; }<br>
+&nbsp; button {<br>
+&nbsp;&nbsp;&nbsp; background-color: #27ae60; border: none;<br>
+&nbsp;&nbsp;&nbsp; padding: 12px 20px; color: white;<br>
+&nbsp;&nbsp;&nbsp; font-weight: bold; border-radius: 8px;<br>
+&nbsp;&nbsp;&nbsp; cursor: pointer; font-size: 1rem; margin-top: 10px;<br>
+&nbsp;&nbsp;&nbsp; width: 100%; transition: background-color 0.3s ease;<br>
+&nbsp; }<br>
+&nbsp; button:hover {<br>
+&nbsp;&nbsp;&nbsp; background-color: #<a href="tel:219150">219150</a>;<br>
+&nbsp; }<br>
+&nbsp; button:disabled {<br>
+&nbsp;&nbsp;&nbsp; background-color: #95a5a6; cursor: not-allowed;<br>
+&nbsp; }<br>
+&nbsp; .result {<br>
+&nbsp;&nbsp;&nbsp; margin-top: 25px;<br>
+&nbsp;&nbsp;&nbsp; background: white; padding: 15px 20px;<br>
+&nbsp;&nbsp;&nbsp; border-radius: 10px; box-shadow: 0 0 12px rgba(0,0,0,0.1);<br>
+&nbsp;&nbsp;&nbsp; color: #<a href="tel:34495">34495</a>e;<br>
+&nbsp; }<br>
+&nbsp; .result h3 {<br>
+&nbsp;&nbsp;&nbsp; margin-top: 15px; color: #<a href="tel:2980">2980</a>b9;<br>
+&nbsp; }<br>
+&nbsp; .passed {<br>
+&nbsp;&nbsp;&nbsp; color: green; font-weight: bold;<br>
+&nbsp; }<br>
+&nbsp; .failed {<br>
+&nbsp;&nbsp;&nbsp; color: red; font-weight: bold;<br>
+&nbsp; }<br>
+&nbsp; .warning {<br>
+&nbsp;&nbsp;&nbsp; color: #e67e22; font-weight: bold;<br>
+&nbsp; }<br>
+&nbsp; @media (max-width: 480px) {<br>
+&nbsp;&nbsp;&nbsp; input[type=number] {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 50px; font-size: 0.9rem;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; }<br>
+&lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;</p>
+<p dir="ltr">&lt;h2&gt;محاسبه‌گر هدایت تحصیلی - نمره پایه نهم لازم&lt;/h2&gt;</p>
+<p dir="ltr">&lt;form id="form"&gt;</p>
+<p dir="ltr">&nbsp; &lt;label for="fieldSelect"&gt;انتخاب رشته:&lt;/label&gt;<br>
+&nbsp; &lt;select id="fieldSelect" required&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="" disabled selected&gt;رشته خود را انتخاب کنید&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="human"&gt;علوم انسانی&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="experimental"&gt;علوم تجربی&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="mathphy"&gt;ریاضی فیزیک&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="karDaneshSanat"&gt;کاردانش - صنعت&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="karDaneshKhedmat"&gt;کاردانش - خدمات&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="karDaneshHonar"&gt;کاردانش - هنر&lt;/option&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;option value="karDaneshKeshavarzi"&gt;کاردانش - کشاورزی&lt;/option&gt;<br>
+&nbsp; &lt;/select&gt;</p>
+<p dir="ltr">&nbsp; &lt;div id="inputsContainer"&gt;&lt;/div&gt;</p>
+<p dir="ltr">&nbsp; &lt;button type="button" onclick="calculate()"&gt;محاسبه نمره پایه نهم لازم&lt;/button&gt;</p>
+<p dir="ltr">&lt;/form&gt;</p>
+<p dir="ltr">&lt;div class="result" id="result"&gt;&lt;/div&gt;</p>
+<p dir="ltr">&lt;p style="margin-top: 20px; font-size: 0.9rem; color: #555;"&gt;طراح: احمد علی پرست&lt;/p&gt;</p>
+<p dir="ltr">&lt;script&gt;<br>
+&nbsp; // داده‌های دروس و حد نصاب نمره برای هر رشته (M)<br>
+&nbsp; const fields = {<br>
+&nbsp;&nbsp;&nbsp; human: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "علوم انسانی",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "ادبیات فارسی": 14,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "مطالعات اجتماعی": 13,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "عربی": 12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; experimental: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "علوم تجربی",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "علوم": 14,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "ریاضی": 13<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; mathphy: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "ریاضی فیزیک",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "ریاضی": 14,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "علوم": 13<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; karDaneshSanat: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "کاردانش - صنعت",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "ریاضی": 10,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "کار و فناوری": 12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; karDaneshKhedmat: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "کاردانش - خدمات",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "کار و فناوری": 10,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "فرهنگ و هنر": 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; karDaneshHonar: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "کاردانش - هنر",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "کار و فناوری": 10,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "فرهنگ و هنر": 12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; },<br>
+&nbsp;&nbsp;&nbsp; karDaneshKeshavarzi: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name: "کاردانش - کشاورزی",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjects: {} // بدون حد نصاب نمره<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; };</p>
+<p dir="ltr">&nbsp; const inputsContainer = <a href="http://document.getElementById">document.getElementById</a>("inputsContainer");<br>
+&nbsp; const fieldSelect = <a href="http://document.getElementById">document.getElementById</a>("fieldSelect");</p>
+<p dir="ltr">&nbsp; // تابع ایجاد فرم نمرات پایه 7 و 8 بر اساس رشته انتخابی<br>
+&nbsp; function createInputs(fieldKey) {<br>
+&nbsp;&nbsp;&nbsp; <a href="http://inputsContainer.innerHTML">inputsContainer.innerHTML</a> = ""; // پاک کردن قبلی</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; const field = fields[fieldKey];<br>
+&nbsp;&nbsp;&nbsp; if(!field) return;</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; // اگر رشته کشاورزی است، پیام می‌دهیم نمره لازم ندارد<br>
+&nbsp;&nbsp;&nbsp; if(fieldKey === "karDaneshKeshavarzi") {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://inputsContainer.innerHTML">inputsContainer.innerHTML</a> = "&lt;p class='warning'&gt;رشته کاردانش کشاورزی نیاز به حد نصاب نمره ندارد.&lt;/p&gt;";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; // برای هر درس در رشته ورودی برای پایه 7 و 8 می‌سازیم<br>
+&nbsp;&nbsp;&nbsp; for (const subject in <a href="http://field.subjects">field.subjects</a>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const div = <a href="http://document.createElement">document.createElement</a>("fieldset");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://div.innerHTML">div.innerHTML</a> = `<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;${subject}&lt;/legend&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;پایه هفتم: &lt;input type="number" min="0" max="20" step="0.1" required name="s7_${subject}"&gt;&lt;/label&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;پایه هشتم: &lt;input type="number" min="0" max="20" step="0.1" required name="s8_${subject}"&gt;&lt;/label&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://inputsContainer.appendChild">inputsContainer.appendChild</a>(div);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; }</p>
+<p dir="ltr">&nbsp; <a href="http://fieldSelect.addEventListener">fieldSelect.addEventListener</a>("change", function() {<br>
+&nbsp;&nbsp;&nbsp; createInputs(<a href="http://this.value">this.value</a>);<br>
+&nbsp;&nbsp;&nbsp; <a href="http://document.getElementById">document.getElementById</a>("result").innerHTML = "";<br>
+&nbsp; });</p>
+<p dir="ltr">&nbsp; function calculate() {<br>
+&nbsp;&nbsp;&nbsp; const fieldKey = <a href="http://fieldSelect.value">fieldSelect.value</a>;<br>
+&nbsp;&nbsp;&nbsp; if(!fieldKey) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert("لطفاً یک رشته را انتخاب کنید.");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; const field = fields[fieldKey];<br>
+&nbsp;&nbsp;&nbsp; if(!field) return;</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; if(fieldKey === "karDaneshKeshavarzi") {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://document.getElementById">document.getElementById</a>("result").innerHTML = "&lt;p class='passed'&gt;رشته کاردانش کشاورزی نیاز به حد نصاب نمره ندارد و قبول خواهید شد.&lt;/p&gt;";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; let resultHtml = `&lt;h3&gt;نمره پایه نهم لازم برای رشته ${<a href="http://field.name">field.name</a>}&lt;/h3&gt;&lt;ul&gt;`;<br>
+&nbsp;&nbsp;&nbsp; let canPass = true;</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; for (const subject in <a href="http://field.subjects">field.subjects</a>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const inputs7 = <a href="http://document.getElementsByName">document.getElementsByName</a>(`s7_${subject}`)[0];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const inputs8 = <a href="http://document.getElementsByName">document.getElementsByName</a>(`s8_${subject}`)[0];</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(!inputs7 || !inputs8) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert("خطا در ورودی‌ها.");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const n7 = parseFloat(<a href="http://inputs7.value">inputs7.value</a>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const n8 = parseFloat(<a href="http://inputs8.value">inputs8.value</a>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const M = <a href="http://field.subjects">field.subjects</a>[subject];</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(isNaN(n7) || isNaN(n8)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(`لطفاً نمرات پایه هفتم و هشتم درس "${subject}" را وارد کنید.`);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(n7 &lt;0 || n7 &gt;20 || n8&lt;0 || n8&gt;20) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(`نمرات درس "${subject}" باید بین 0 تا 20 باشند.`);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // محاسبه نمره پایه نهم لازم x:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // x = (5*M - n7 - n8) / 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const x = (5*M - n7 - n8) / 3;</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(x &gt; 20) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resultHtml += `&lt;li&gt;&lt;strong&gt;${subject}:&lt;/strong&gt; &lt;span class="failed"&gt;نمره پایه نهم لازم بیشتر از 20 است (${<a href="http://x.toFixed">x.toFixed</a>(2)}). قبول نمی‌شود.&lt;/span&gt;&lt;/li&gt;`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; canPass = false;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else if(x &lt; 0) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // اگر کمتر از صفر شد یعنی نمره پایه 7 و 8 بالاتر از حد نصاب است<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resultHtml += `&lt;li&gt;&lt;strong&gt;${subject}:&lt;/strong&gt; &lt;span class="passed"&gt;نمره پایه نهم لازم صفر یا کمتر (نمرات پایه 7 و 8 کافی است).&lt;/span&gt;&lt;/li&gt;`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resultHtml += `&lt;li&gt;&lt;strong&gt;${subject}:&lt;/strong&gt; &lt;span class="passed"&gt;${<a href="http://x.toFixed">x.toFixed</a>(2)}&lt;/span&gt;&lt;/li&gt;`;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; resultHtml += "&lt;/ul&gt;";</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; if(canPass) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resultHtml += `&lt;p class="passed"&gt;شما می‌توانید این رشته را قبول شوید اگر نمرات پایه نهم مطابق یا بالاتر از این مقادیر باشد.&lt;/p&gt;`;<br>
+&nbsp;&nbsp;&nbsp; } else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resultHtml += `&lt;p class="failed"&gt;شما نمی‌توانید این رشته را قبول شوید زیرا حد نصاب نمرات برای برخی درس‌ها بیشتر از ۲۰ است.&lt;/p&gt;`;<br>
+&nbsp;&nbsp;&nbsp; }</p>
+<p dir="ltr">&nbsp;&nbsp;&nbsp; <a href="http://document.getElementById">document.getElementById</a>("result").innerHTML = resultHtml;<br>
+&nbsp; }<br>
+&lt;/script&gt;</p>
+<p dir="ltr">&lt;/body&gt;<br>
+&lt;/html&gt;</p>
